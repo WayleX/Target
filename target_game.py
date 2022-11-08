@@ -38,3 +38,20 @@ def get_words(f: str, letters: List[str]) -> List[str]:
             if k==0:
                 words.append(line.strip().lower())
     return words
+def get_user_words() -> List[str]:
+    """
+    Gets words from user input and returns a list with these words.
+    Usage: enter a word or press ctrl+d to finish for *nix or Ctrl-Z+Enter 
+    for Windows.
+    Note: the user presses the enter key after entering each word.
+    """
+    words=[]
+    try:
+        while True:
+            word=input()
+            if word=="":
+                break
+            words.append(word)
+    except:
+        return words
+    return words
