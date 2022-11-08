@@ -1,0 +1,3 @@
+1
+['cive', 'crier', 'crime', 'emir', 'eric', 'eric', 'imer', 'mice', 'mire', 'reim', 'remi', 'rice', 'ricer', 'riem', 'rier', 'rime', 'rimer', 'rive', 'river', 'veri', 'vice', 'vier', 'view', 'vire', 'weir', 'weri', 'wice', 'wire', 'wirer', 'wirr', 'wive', 'wiver', 'wrier', 'wrive', 'zemi']
+['vime']
