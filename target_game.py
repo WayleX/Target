@@ -55,3 +55,27 @@ def get_user_words() -> List[str]:
     except:
         return words
     return words
+def get_pure_user_words(user_words: List[str], letters: List[str], words_from_dict: List[str]) -> List[str]:
+    """
+    (list, list, list) -> list
+
+    Checks user words with the rules and returns list of those words
+    that are not in dictionary.
+    """
+    mistakes=[]
+    
+    for word in user_words:
+        if len(word)<4 or word.count(letters[4])==0:
+            continue
+        for i in range(len(word)):
+            if not(word[i] in letters):
+                continue
+        k=0
+        for i in range(len(word)):
+            if not (word.count(word[i]) <= letters.count(word[i])):
+                k=1
+        if k==1:
+            continue
+        if not word in words_from_dict:
+            mistakes.append(word)
+    return mistakes
