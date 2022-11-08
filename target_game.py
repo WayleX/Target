@@ -55,6 +55,7 @@ def get_user_words() -> List[str]:
     except:
         return words
     return words
+
 def get_pure_user_words(user_words: List[str], letters: List[str], words_from_dict: List[str]) -> List[str]:
     """
     (list, list, list) -> list
@@ -79,3 +80,33 @@ def get_pure_user_words(user_words: List[str], letters: List[str], words_from_di
         if not word in words_from_dict:
             mistakes.append(word)
     return mistakes
+def results():
+    just_list=generate_grid()
+    list_chr=[]
+    for itera_1 in range(3):
+        for i in range(3):
+            list_chr.append(just_list[itera_1][i])
+    print(list_chr)
+    full_words=get_words("en.txt",list_chr)
+    user_words=get_user_words()
+    count=0
+    for i in user_words:
+        if i in full_words:
+            count+=1
+    almost_words=get_pure_user_words(user_words, list_chr, full_words)
+    not_guessed=[]
+    for i in full_words:
+        if not i in user_words:
+            not_guessed.append(i)
+    print(count)
+    print(not_guessed)
+    print(almost_words)
+    with open("results.txt", 'w') as file:
+        file.write(str(count))
+        file.write("\n")
+        file.write(str(not_guessed))
+        file.write("\n")
+        file.write(str(almost_words))
+        file.write("\n")
+    return None 
+    
